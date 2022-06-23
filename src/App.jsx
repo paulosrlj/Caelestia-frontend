@@ -1,8 +1,12 @@
 import './App.css';
 
+import { ChakraProvider } from '@chakra-ui/react';
+
 function App() {
   return (
-    <h1>Hello World</h1>
+    <ChakraProvider>
+      <h1>Hello World</h1>
+    </ChakraProvider>
   );
 }
 
