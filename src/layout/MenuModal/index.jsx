@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ReactDOM from 'react-dom';
 import {
   Box,
   Flex,
@@ -38,47 +39,51 @@ function MenuModal() {
   };
 
   return (
-    <>
-      <Box
-        width="auto"
-        m="15px"
-      >
-        <FaCompass
-          onMouseOver={() => setMenuHover(true)}
-          onMouseOut={() => setMenuHover(false)}
-          style={{
-            transition: 'transform 0.2s ease-in',
-            transform: `${menuHover ? 'rotate(-45deg)' : 'rotate(0)'}`,
-          }}
-          cursor="pointer"
-          size={35}
-          color="black"
-          onClick={() => handleSizeClick(size)}
-        />
+    ReactDOM.createPortal(
+      <>
+        <Box
+          width="auto"
+          m="15px"
+        >
+          <FaCompass
+            onMouseOver={() => setMenuHover(true)}
+            onMouseOut={() => setMenuHover(false)}
+            style={{
+              transition: 'transform 0.2s ease-in',
+              transform: `${menuHover ? 'rotate(-45deg)' : 'rotate(0)'}`,
+            }}
+            cursor="pointer"
+            size={35}
+            color="black"
+            onClick={() => handleSizeClick(size)}
+          />
 
-      </Box>
+        </Box>
 
-      <Modal onClose={onClose} size={size} isOpen={isOpen}>
-        <ModalOverlay />
-        <ModalContent bgColor="transparent">
+        <Modal onClose={onClose} size={size} isOpen={isOpen}>
+          <ModalOverlay />
+          <ModalContent bgColor="transparent">
 
-          <ModalCloseButton outline="none" color="whiteAlpha.900" size={20} p="4" />
-          <ModalBody
-            mt={['50px', '50px']}
-            h="100vh"
-            display="flex"
-            alignItems="center"
-          >
-            <Flex flexWrap="wrap" alignItems="center" justifyContent="center" w="100%">
-              {pages.map((page) => (
-                <PageBox image={page.image} title={page.pageTitle} key={page.id} />
-              ))}
-            </Flex>
-          </ModalBody>
+            <ModalCloseButton outline="none" color="whiteAlpha.900" size={20} p="4" />
+            <ModalBody
+              mt={['50px', '50px']}
+              h="100vh"
+              display="flex"
+              alignItems="center"
+            >
+              <Flex flexWrap="wrap" alignItems="center" justifyContent="center" w="100%">
+                {pages.map((page) => (
+                  <PageBox image={page.image} title={page.pageTitle} key={page.id} />
+                ))}
+              </Flex>
+            </ModalBody>
 
-        </ModalContent>
-      </Modal>
-    </>
+          </ModalContent>
+        </Modal>
+      </>,
+      document.getElementById('modalMenu'),
+    )
+
   );
 }
 
