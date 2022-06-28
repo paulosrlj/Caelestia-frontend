@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  Button,
+  Box,
   Flex,
   Modal,
   ModalBody,
@@ -9,8 +9,10 @@ import {
   ModalOverlay,
   useDisclosure,
 } from '@chakra-ui/react';
-import PageBox from './Box';
 
+import { FaCompass } from 'react-icons/fa';
+
+import PageBox from './Box';
 import {
   Astronaut, Astronomy, Friendship, Mission, Medal, Training, Ranking, Shop,
 } from './assets';
@@ -18,6 +20,7 @@ import {
 function MenuModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = useState('full');
+  const [menuHover, setMenuHover] = useState(false);
 
   const pages = [{ id: 1, image: Astronomy, pageTitle: 'Aprendizado' },
     { id: 2, image: Training, pageTitle: 'Sala de aula' },
@@ -36,9 +39,24 @@ function MenuModal() {
 
   return (
     <>
-      <Button onClick={() => handleSizeClick(size)} key={size} m={4}>
-        {`Open ${size} Modal`}
-      </Button>
+      <Box
+        width="auto"
+        m="15px"
+      >
+        <FaCompass
+          onMouseOver={() => setMenuHover(true)}
+          onMouseOut={() => setMenuHover(false)}
+          style={{
+            transition: 'transform 0.2s ease-in',
+            transform: `${menuHover ? 'rotate(-45deg)' : 'rotate(0)'}`,
+          }}
+          cursor="pointer"
+          size={35}
+          color="black"
+          onClick={() => handleSizeClick(size)}
+        />
+
+      </Box>
 
       <Modal onClose={onClose} size={size} isOpen={isOpen}>
         <ModalOverlay />

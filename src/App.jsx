@@ -11,6 +11,7 @@ function App() {
       {/* <Text color="solid_purple.100">Teste</Text> */}
       {/* <CreateModule /> */}
       <MenuModal />
+
     </ChakraProvider>
   );
 }
