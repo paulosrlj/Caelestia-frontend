@@ -21,6 +21,7 @@ function PageBox({ image, title }) {
         '0 0 calc(20%)',
       ]}
       boxShadow="1px 1px 5px rgba(0, 0, 0, 0.5)"
+      _hover={{ transform: 'scale(0.85)' }}
     >
       <Flex
         flexDirection="column"
