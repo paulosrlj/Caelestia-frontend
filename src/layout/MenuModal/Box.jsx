@@ -8,7 +8,7 @@ function PageBox({ image, title }) {
       borderRadius="lg"
       bgColor="solid_purple.100"
       boxSize={['150px', '150px', '', '200px', '250px']}
-      my={['', '10px']}
+      my={['', '', '', '', '-10px', '10px']}
       mx={['', '', '', '', '', '20px']}
       cursor="pointer"
       transform="scale(0.8)"
