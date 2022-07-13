@@ -17,6 +17,7 @@ const theme = extendTheme(
       },
       pure_green: {
         100: '#00CD96',
+        200: '#00BE8B',
       },
       main_red: {
         100: '#FF4F19',
