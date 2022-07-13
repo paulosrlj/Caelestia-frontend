@@ -22,6 +22,9 @@ const theme = extendTheme(
       main_red: {
         100: '#FF4F19',
       },
+      gray: {
+        locked: '#979797',
+      },
     },
     breakpoints,
   },
