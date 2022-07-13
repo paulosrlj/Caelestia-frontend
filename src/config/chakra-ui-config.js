@@ -23,7 +23,15 @@ const theme = extendTheme(
         100: '#FF4F19',
       },
       gray: {
+        subtitle: '#BDBDBD',
         locked: '#979797',
+      },
+      black: {
+        achievementModalTitle: '#2F2E41',
+      },
+      blue: {
+        infoButton: '#46B1D2',
+        infoButtonDarker: '#208FB2',
       },
     },
     breakpoints,
