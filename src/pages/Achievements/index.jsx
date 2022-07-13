@@ -1,8 +1,99 @@
 import { Button, Flex, Heading } from '@chakra-ui/react';
+import { useState } from 'react';
 import AppWrapper from '../../wrapper/AppWrapper';
 import AchievementBox from './AchievementBox';
 
 function Achievements() {
+  const [selectedAc, setSelectedAc] = useState(null);
+
+  const achievementsData = [
+    {
+      id: 1,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      requisito: 'Astronomia antiga',
+      unlocked: false,
+    },
+    {
+      id: 2,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      requisito: 'Astronomia antiga',
+      unlocked: true,
+    },
+    {
+      id: 3,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      unlocked: false,
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 4,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      unlocked: false,
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 5,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      unlocked: true,
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 6,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      unlocked: false,
+      lessonType: 'PRATICA',
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 7,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      unlocked: false,
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 8,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      lessonType: 'PRATICA',
+      unlocked: false,
+      requisito: 'Astronomia antiga',
+    },
+    {
+      id: 9,
+      name: 'AchievementName',
+      description: 'Anything',
+      level: 1,
+      unlocked: false,
+      lessonType: 'PRATICA',
+      requisito: 'Astronomia antiga',
+    },
+  ];
+
+  const handleAchievementModalOpen = (id, unlocked) => {
+    if (unlocked) setSelectedAc(id);
+  };
+
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="center" mb="20px">
       <Heading
@@ -17,7 +108,6 @@ function Achievements() {
         Conquistas
 
       </Heading>
-
       <Flex
         maxH={[
           '',
@@ -36,17 +126,14 @@ function Achievements() {
         ]}
         overflowY="auto"
       >
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
+        {achievementsData.map((ac) => (
+          <AchievementBox
+            onClick={() => handleAchievementModalOpen(ac.id, ac.unlocked)}
+            key={ac.id}
+            unlocked={ac.unlocked}
+            selected={ac.unlocked && ac.id === selectedAc}
+          />
+        ))}
 
       </Flex>
       <Button

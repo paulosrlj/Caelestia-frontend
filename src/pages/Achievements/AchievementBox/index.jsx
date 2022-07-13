@@ -1,8 +1,9 @@
 import { Flex, Image } from '@chakra-ui/react';
 
-function AchievementBox({ selected, unlocked }) {
+function AchievementBox({ selected, unlocked, onClick }) {
   return (
     <Flex
+      onClick={onClick}
       bgColor={unlocked ? 'solid_purple.100' : 'gray.locked'}
       borderRadius="10px"
       p="10px"
