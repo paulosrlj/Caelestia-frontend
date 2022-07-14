@@ -173,7 +173,7 @@ function Achievements() {
           transition="all 0.3s ease"
           _hover={{ bgColor: 'pure_green.200' }}
         >
-          Salvar
+          Equipar
         </Button>
         <Button
           bgColor="blue.infoButton"

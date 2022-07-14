@@ -16,6 +16,7 @@ import { FaCompass } from 'react-icons/fa';
 import PageBox from './Box';
 import {
   Astronaut, Astronomy, Friendship, Mission, Medal, Training, Ranking, Shop,
+  Home, Settings,
 } from './assets';
 
 function MenuModal() {
@@ -23,14 +24,17 @@ function MenuModal() {
   const [size, setSize] = useState('full');
   const [menuHover, setMenuHover] = useState(false);
 
-  const pages = [{ id: 1, image: Astronomy, pageTitle: 'Aprendizado' },
-    { id: 2, image: Training, pageTitle: 'Sala de aula' },
-    { id: 3, image: Ranking, pageTitle: 'Ranking' },
-    { id: 4, image: Mission, pageTitle: 'Missões' },
-    { id: 5, image: Medal, pageTitle: 'Conquistas' },
-    { id: 6, image: Friendship, pageTitle: 'Amigos' },
-    { id: 7, image: Shop, pageTitle: 'Loja' },
-    { id: 8, image: Astronaut, pageTitle: 'Perfil' },
+  const pages = [
+    { id: 1, image: Home, pageTitle: 'Home' },
+    { id: 2, image: Astronomy, pageTitle: 'Aprendizado' },
+    { id: 3, image: Training, pageTitle: 'Sala de aula' },
+    { id: 4, image: Ranking, pageTitle: 'Ranking' },
+    { id: 5, image: Mission, pageTitle: 'Missões' },
+    { id: 6, image: Medal, pageTitle: 'Conquistas' },
+    { id: 7, image: Friendship, pageTitle: 'Amigos' },
+    { id: 8, image: Shop, pageTitle: 'Loja' },
+    { id: 9, image: Astronaut, pageTitle: 'Perfil' },
+    { id: 10, image: Settings, pageTitle: 'Configurações' },
   ];
 
   const handleSizeClick = (newSize) => {
