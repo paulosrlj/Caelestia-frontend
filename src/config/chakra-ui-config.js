@@ -25,6 +25,7 @@ const theme = extendTheme(
       gray: {
         subtitle: '#BDBDBD',
         locked: '#979797',
+        progressBar: '#C4C4C4',
       },
       black: {
         achievementModalTitle: '#2F2E41',
