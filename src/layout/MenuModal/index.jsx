@@ -19,7 +19,7 @@ import {
   Home, Settings,
 } from './assets';
 
-function MenuModal() {
+function MenuModal({ whiteIcon }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = useState('full');
   const [menuHover, setMenuHover] = useState(false);
@@ -58,7 +58,7 @@ function MenuModal() {
             }}
             cursor="pointer"
             size={35}
-            color="black"
+            color={whiteIcon ? '#f3f3f3' : 'black'}
             onClick={() => handleSizeClick(size)}
           />
 

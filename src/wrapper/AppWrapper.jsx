@@ -1,10 +1,10 @@
 import MenuModal from '../layout/MenuModal';
 
-function AppWrapper(Component) {
+function AppWrapper(Component, whiteIcon) {
   return function HOC() {
     return (
       <>
-        <MenuModal />
+        <MenuModal whiteIcon={whiteIcon} />
         <Component />
       </>
     );
