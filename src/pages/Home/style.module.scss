@@ -9,3 +9,33 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.right-section-profile {
+  width: 49vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+}
+
+.scroll-section {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 580px) {
+  .left-section-profile {
+    position: relative;
+    width: 100vw;
+  }
+
+  .right-section-profile {
+    position: relative;
+    width: 100vw;
+  }
+}
