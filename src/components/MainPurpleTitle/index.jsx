@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react';
 
-function MainPurpleTitle({ children }) {
+function MainPurpleTitle({ children, mt }) {
   return (
     <Heading
       textAlign="center"
@@ -8,7 +8,7 @@ function MainPurpleTitle({ children }) {
       textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
       fontFamily="'Inter', sans-serif"
       fontWeight="light"
-      mt="50px"
+      mt={mt || '50px'}
       fontSize={[
         '30px',
         '25px',

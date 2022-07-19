@@ -9,6 +9,7 @@ import styles from './style.module.scss';
 import ProfileLeftSide from './ProfileLeftSide';
 import AchievementOnDisplay from './ProfileRightSide/AchievementOnDisplay';
 import PlayerStats from './ProfileRightSide/PlayerStats';
+import PlayerCharts from './ProfileRightSide/PlayerCharts';
 
 function Home() {
   return (
@@ -32,6 +33,7 @@ function Home() {
 
         <PlayerStats />
 
+        <PlayerCharts />
       </motion.div>
 
     </Flex>
