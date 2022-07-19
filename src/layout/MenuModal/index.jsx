@@ -44,7 +44,7 @@ function MenuModal({ whiteIcon }) {
 
   return (
     ReactDOM.createPortal(
-      <Box pos="absolute" top="0">
+      <Box pos="fixed" top="0">
         <Box
           width="auto"
           m="15px"
