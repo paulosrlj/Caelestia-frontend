@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
-import { BiBookOpen, BiTestTube } from 'react-icons/bi';
+import { BiBookOpen, BiStats, BiTestTube } from 'react-icons/bi';
 import { IoPlanetOutline } from 'react-icons/io5';
 import { GiAchievement } from 'react-icons/gi';
 import { AiOutlineCalendar } from 'react-icons/ai';
@@ -20,7 +20,12 @@ function PlayerStats() {
       whileInView={{ opacity: [0, 1], y: [100, 0] }}
       transition={{ duration: 0.8 }}
     >
-      <MainPurpleTitle>Estatísticas</MainPurpleTitle>
+      <MainPurpleTitle>
+        <Flex alignItems="center">
+          <BiStats size={40} />
+          Estatísticas
+        </Flex>
+      </MainPurpleTitle>
 
       <Flex w="60%" my="50px" flexDir="column" alignItems="flex-start">
         <Flex my="5px" alignItems="center">
