@@ -3,7 +3,7 @@ import { Buffer } from 'buffer';
 import { useEffect, useState } from 'react';
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
-import uploadImageCallBack from './uploadImageCallback';
+import { uploadTheoricLessonImageCallBack } from './uploadImageCallback';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 function EditorContainer() {
@@ -82,7 +82,10 @@ function EditorContainer() {
           textAlign: { inDropdown: true },
           link: { inDropdown: true },
           history: { inDropdown: true },
-          image: { uploadCallback: uploadImageCallBack, alt: { present: true, mandatory: true } },
+          image: {
+            uploadCallback: uploadTheoricLessonImageCallBack,
+            alt: { present: true, mandatory: true },
+          },
         }}
       />
 
