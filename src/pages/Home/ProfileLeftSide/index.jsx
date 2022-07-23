@@ -1,5 +1,5 @@
 import {
-  Flex, Heading, Image, Progress, Text,
+  Flex, Heading, Image, Progress, Text, useDisclosure,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import AttributesOnDisplay from '../AttributesOnDisplay';
@@ -7,8 +7,19 @@ import AttributesOnDisplay from '../AttributesOnDisplay';
 import { Amethyst, Level } from '../assets';
 
 import styles from '../style.module.scss';
+import ChangePictureModal from './ChangePictureModal';
 
 function ProfileLeftSide() {
+  const data = {
+    imageUrl: 'https://picsum.photos/536/354',
+  };
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleImageClick = () => {
+    onOpen();
+  };
+
   return (
     <motion.div
       className={styles['left-section-profile']}
@@ -20,10 +31,12 @@ function ProfileLeftSide() {
         <Image
           w="200px"
           h="200px"
-          src="https://picsum.photos/536/354"
+          src={data.imageUrl}
           borderRadius="50%"
           cursor="pointer"
+          onClick={handleImageClick}
         />
+        <ChangePictureModal imageSrc={data.imageUrl} isOpen={isOpen} onClose={onClose} />
         <Heading
           mt="20px"
           fontSize="30px"
