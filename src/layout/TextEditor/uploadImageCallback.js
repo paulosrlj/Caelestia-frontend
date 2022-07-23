@@ -5,8 +5,8 @@ import {
 import { v4 } from 'uuid';
 import { storage } from '../../config/firebase';
 
-async function uploadImageCallBack(file) {
-  const imageRef = ref(storage, `image/${file.name + v4()}`);
+async function uploadTheoricLessonImageCallBack(file) {
+  const imageRef = ref(storage, `theoric_lesson_image/${file.name + v4()}`);
 
   const response = await uploadBytes(imageRef, file);
 
@@ -16,4 +16,4 @@ async function uploadImageCallBack(file) {
   return { data: { link: url } };
 }
 
-export default uploadImageCallBack;
+export { uploadTheoricLessonImageCallBack };
