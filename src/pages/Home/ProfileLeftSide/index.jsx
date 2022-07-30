@@ -9,11 +9,7 @@ import { Amethyst, Level } from '../assets';
 import styles from '../style.module.scss';
 import ChangePictureModal from './ChangePictureModal';
 
-function ProfileLeftSide() {
-  const data = {
-    imageUrl: 'https://picsum.photos/536/354',
-  };
-
+function ProfileLeftSide({ playerInfo, isSelfProfile }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleImageClick = () => {
@@ -31,19 +27,28 @@ function ProfileLeftSide() {
         <Image
           w="200px"
           h="200px"
-          src={data.imageUrl}
+          src={playerInfo.profileImage}
           borderRadius="50%"
-          cursor="pointer"
-          onClick={handleImageClick}
+          cursor={isSelfProfile ? 'pointer' : ''}
+          onClick={isSelfProfile ? handleImageClick : ''}
         />
-        <ChangePictureModal imageSrc={data.imageUrl} isOpen={isOpen} onClose={onClose} />
+
+        {/* Se não for o próprio perfil não exibe o modal pra mudar a foto de perfil */}
+        {isSelfProfile
+        && (
+        <ChangePictureModal
+          imageSrc={playerInfo.profileImage}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
+        )}
+
         <Heading
           mt="20px"
           fontSize="30px"
           textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         >
-          TogakureRyuu
-
+          {playerInfo.username}
         </Heading>
         <Text
           fontSize="16px"
@@ -51,7 +56,7 @@ function ProfileLeftSide() {
           fontWeight="semibold"
           textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         >
-          Devorador de estrelas
+          {playerInfo.rankingSubtitle}
         </Text>
       </Flex>
 
@@ -59,22 +64,22 @@ function ProfileLeftSide() {
         <AttributesOnDisplay
           attributeImage={Amethyst}
           attributeImageAltText="Ícone de ametista que representa a moeda virtual"
-          attributeAmount={233}
+          attributeAmount={playerInfo.coinsAmount}
         />
 
         <AttributesOnDisplay
           attributeImage={Level}
           attributeImageAltText="Ícone representa a quantidade de pontos de experiência"
-          attributeAmount={1265187}
+          attributeAmount={playerInfo.expPoints}
         />
 
       </Flex>
 
       <Flex flexDir="column" alignItems="center" w="90%">
         <Flex alignItems="center" justifyContent="center" w="100%">
-          <Text mr="20px">Lv 23</Text>
+          <Text mr="20px">{playerInfo.level}</Text>
           <Progress borderRadius="10px" value={40} bgColor="gray.progressBar" colorScheme="whatsapp" w="70%" />
-          <Text ml="20px">Lv 24</Text>
+          <Text ml="20px">{playerInfo.level + 1}</Text>
         </Flex>
         <Text>22/100 xp</Text>
       </Flex>

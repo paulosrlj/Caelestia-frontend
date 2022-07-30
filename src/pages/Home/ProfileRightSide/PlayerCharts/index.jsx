@@ -8,35 +8,7 @@ import MainPurpleTitle from '../../../../components/MainPurpleTitle';
 
 import styles from '../../style.module.scss';
 
-function PlayerCharts() {
-  const dates = [
-    {
-      day: 15,
-      xpEarned: 467,
-      date: '15/07/2022',
-    },
-    {
-      day: 16,
-      xpEarned: 178,
-      date: '16/07/2022',
-    },
-    {
-      day: 17,
-      xpEarned: 356,
-      date: '17/07/2022',
-    },
-    {
-      day: 18,
-      xpEarned: 14,
-      date: '18/07/2022',
-    },
-    {
-      day: 19,
-      xpEarned: 211,
-      date: '19/07/2022',
-    },
-  ];
-
+function PlayerCharts({ chartsData }) {
   return (
     <motion.div
       className={styles['scroll-section']}
@@ -50,7 +22,7 @@ function PlayerCharts() {
             <LineChart
               width={500}
               height={300}
-              data={dates}
+              data={chartsData}
               margin={{
                 top: 5,
                 right: 30,
