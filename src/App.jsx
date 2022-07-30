@@ -8,6 +8,7 @@ import { theme } from './config/chakra-ui-config';
 // import Achievements from './pages/Achievements';
 import SelectModule from './pages/SelectModule';
 import Home from './pages/Home';
+import Ranking from './pages/Ranking';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <MenuModal /> */}
       {/* <Achievements /> */}
       {/* <SelectModule /> */}
-      <Home />
+      {/* <Home /> */}
+      <Ranking />
     </ChakraProvider>
   );
 }
