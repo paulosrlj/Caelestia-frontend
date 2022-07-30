@@ -13,7 +13,7 @@ import BlackSubtext from '../../../../components/BlackSubtext';
 
 import styles from '../../style.module.scss';
 
-function PlayerStats() {
+function PlayerStats({ playerStats }) {
   return (
     <motion.div
       className={styles['scroll-section']}
@@ -33,7 +33,7 @@ function PlayerStats() {
           <BlackSubtext>
             Lições teóricas completas:
             {' '}
-            <CountUp end={213} duration={1}>
+            <CountUp end={playerStats.theoricLessons} duration={1}>
               {({ countUpRef, start }) => (
                 <VisibilitySensor onChange={start} delayedCall>
                   <span ref={countUpRef} />
@@ -47,7 +47,7 @@ function PlayerStats() {
           <BlackSubtext>
             Lições práticas completas:
             {' '}
-            <CountUp end={62} duration={1}>
+            <CountUp end={playerStats.praticalLessons} duration={1}>
               {({ countUpRef, start }) => (
                 <VisibilitySensor onChange={start} delayedCall>
                   <span ref={countUpRef} />
@@ -58,14 +58,18 @@ function PlayerStats() {
         </Flex>
         <Flex my="5px" alignItems="center">
           <IoPlanetOutline size={30} color="#A044FF" />
-          <BlackSubtext>Ranking mais alto alcançado: Buraco Negro</BlackSubtext>
+          <BlackSubtext>
+            Ranking mais alto alcançado:
+            {' '}
+            {playerStats.highestRank}
+          </BlackSubtext>
         </Flex>
         <Flex my="5px" alignItems="center">
           <GiAchievement size={30} color="#A044FF" />
           <BlackSubtext>
             Conquistas desbloqueadas:
             {' '}
-            <CountUp end={12} duration={1}>
+            <CountUp end={playerStats.achievementsCount} duration={1}>
               {({ countUpRef, start }) => (
                 <VisibilitySensor onChange={start} delayedCall>
                   <span ref={countUpRef} />
@@ -79,7 +83,7 @@ function PlayerStats() {
           <BlackSubtext>
             Total de dias logados:
             {' '}
-            <CountUp end={21} duration={1}>
+            <CountUp end={playerStats.totalDaysLogged} duration={1}>
               {({ countUpRef, start }) => (
                 <VisibilitySensor onChange={start} delayedCall>
                   <span ref={countUpRef} />
