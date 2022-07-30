@@ -8,8 +8,10 @@ import Training from './training.png';
 import Shop from './shop.png';
 import Settings from './settings.png';
 import Home from './house.png';
+import Inventory from './money-bag.png';
 
 export {
-  Astronaut, Astronomy, Friendship, Mission, Medal, Ranking, Training, Shop,
-  Home, Settings,
+  Astronaut, Astronomy, Friendship, Mission,
+  Medal, Ranking, Training, Shop,
+  Home, Settings, Inventory,
 };

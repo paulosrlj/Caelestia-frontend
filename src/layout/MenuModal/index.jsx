@@ -15,7 +15,8 @@ import { FaCompass } from 'react-icons/fa';
 
 import PageBox from './Box';
 import {
-  Astronaut, Astronomy, Friendship, Mission, Medal, Training, Ranking, Shop,
+  Inventory, Astronomy, Friendship, Mission,
+  Medal, Training, Ranking, Shop,
   Home, Settings,
 } from './assets';
 
@@ -33,7 +34,7 @@ function MenuModal({ whiteIcon }) {
     { id: 6, image: Medal, pageTitle: 'Conquistas' },
     { id: 7, image: Friendship, pageTitle: 'Amigos' },
     { id: 8, image: Shop, pageTitle: 'Loja' },
-    { id: 9, image: Astronaut, pageTitle: 'Perfil' },
+    { id: 9, image: Inventory, pageTitle: 'Inventário' },
     { id: 10, image: Settings, pageTitle: 'Configurações' },
   ];
 
