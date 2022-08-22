@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { Buffer } from 'buffer';
+import { Flex, Heading, Button } from '@chakra-ui/react';
+
+import { BsFillEraserFill } from 'react-icons/bs';
+
 import { useEffect, useState } from 'react';
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
@@ -50,17 +53,18 @@ function EditorContainer() {
     const arr = JSON.stringify({
       xpEarned: 100,
       lessonName: 'Lição genérica',
-      draftJsText: {
-        blocks: data.blocks,
-        entityMap: data.entityMap,
-      },
+      // draftJsText: {
+      //   blocks: data.blocks,
+      //   entityMap: data.entityMap,
+      // },
+      description: data,
     });
 
     // console.log(JSON.stringify([1, 2, 3]))
 
     console.log(arr);
 
-    axios.post('http://localhost:8082/theoriclesson/', arr, {
+    axios.post('http://localhost:8000/', arr, {
       headers: {
       // Overwrite Axios's automatically set Content-Type
         'Content-Type': 'application/json',
@@ -69,14 +73,36 @@ function EditorContainer() {
   };
 
   return (
-    <div className="editor">
+    <Flex justifyContent="center" alignItems="center" flexDir="column" w="100vw" overflow="hidden">
+      <Heading
+        textAlign="center"
+        color="solid_purple.100"
+        textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+        fontFamily="'Inter', sans-serif"
+        fontWeight="light"
+        my="30px"
+        fontSize={[
+          '30px',
+          '25px',
+          '25px',
+          '30px',
+        ]}
+      >
+        Lição
+      </Heading>
       <Editor
         // toolbarHidden
         // readOnly
+        editorStyle={{
+          width: '85vw',
+          height: 'auto',
+          border: '1px solid #A044FF',
+          padding: '10px',
+          boxShadow: '1px 1px 5px #A044FF',
+        }}
         editorState={editorState}
         onEditorStateChange={onEditorStateChange}
         toolbar={{
-
           inline: { inDropdown: true },
           list: { inDropdown: true },
           textAlign: { inDropdown: true },
@@ -86,11 +112,16 @@ function EditorContainer() {
             uploadCallback: uploadTheoricLessonImageCallBack,
             alt: { present: true, mandatory: true },
           },
+          remove: { icon: BsFillEraserFill, className: undefined, component: undefined },
         }}
       />
 
-      <button type="button" onClick={handleSubmit}>Click</button>
-    </div>
+      <Flex justifyContent="space-around" w="20%" my="20px">
+        <Button colorScheme="red">Voltar</Button>
+        <Button colorScheme="whatsapp" onClick={handleSubmit}>Salvar</Button>
+      </Flex>
+
+    </Flex>
   );
 }
 
