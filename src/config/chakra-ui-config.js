@@ -20,7 +20,8 @@ const theme = extendTheme(
         200: '#00BE8B',
       },
       main_red: {
-        100: '#FF4F19',
+        100: '#EB5757',
+        darker_red: '#F44F4F',
       },
       gray: {
         subtitle: '#BDBDBD',
