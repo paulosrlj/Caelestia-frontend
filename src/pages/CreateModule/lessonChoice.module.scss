@@ -1,0 +1,7 @@
+.lesson-card {
+  transition: all 0.5s ease-in-out;
+}
+
+.lesson-card:hover {
+  transform: translateY(-10px);
+}
