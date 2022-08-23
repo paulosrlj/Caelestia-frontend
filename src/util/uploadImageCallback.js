@@ -10,7 +10,7 @@ async function uploadImageCallBack(file, uploadType) {
   if (uploadType === 'profileImage') {
     uploadUrl = `profile_image/${file.name + v4()}`;
   } else if (uploadType === 'praticalLessonImage') {
-    uploadUrl = `theoric_lesson_image/${file.name + v4()}`;
+    uploadUrl = `pratical_lesson_image/${file.name + v4()}`;
   }
   const imageRef = ref(storage, uploadUrl);
 
@@ -24,6 +24,7 @@ async function uploadImageCallBack(file, uploadType) {
   } catch (error) {
     console.error(error);
   }
+
   return { data: { link: url } };
 }
 

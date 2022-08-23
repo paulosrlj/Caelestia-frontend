@@ -3,7 +3,7 @@ import './App.css';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from './config/chakra-ui-config';
-import CreateModule from './pages/CreateModule/QuestionDescription';
+import CreateModule from './pages/CreateModule/ImageQuestion/ImageQuestion';
 // import MenuModal from './layout/MenuModal';
 // import Achievements from './pages/Achievements';
 import SelectModule from './pages/SelectModule';
