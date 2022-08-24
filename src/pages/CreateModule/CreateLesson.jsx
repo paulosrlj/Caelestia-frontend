@@ -4,7 +4,8 @@ import {
 import { BiTestTube } from 'react-icons/bi';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { GiOpenBook } from 'react-icons/gi';
-import AppWrapper from '../../wrapper/AppWrapper';
+
+import { Link } from 'react-router-dom';
 
 function CreateLesson() {
   const lessons = [
@@ -60,7 +61,7 @@ function CreateLesson() {
           _hover={{ backgroundColor: 'blue.infoButtonDarker' }}
           my="20px"
         >
-          Criar lição
+          <Link to="/admin/lesson_choice">Criar lição</Link>
 
         </Button>
         <Button
@@ -90,4 +91,4 @@ function CreateLesson() {
   );
 }
 
-export default AppWrapper(CreateLesson);
+export default CreateLesson;

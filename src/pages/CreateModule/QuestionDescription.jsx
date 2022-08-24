@@ -2,6 +2,7 @@ import {
   Flex, Text, Button, Textarea,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AppWrapper from '../../wrapper/AppWrapper';
 
 function QuestionDescription() {
@@ -27,22 +28,27 @@ function QuestionDescription() {
       </Flex>
 
       <Flex w="50%" justifyContent="space-evenly">
-        <Button
-          color="white"
-          backgroundColor="main_red.100"
-          _hover={{ backgroundColor: 'main_red.darker_red' }}
-          my="20px"
-        >
-          Voltar
-        </Button>
-        <Button
-          color="white"
-          backgroundColor="pure_green.100"
-          _hover={{ backgroundColor: 'pure_green.200' }}
-          my="20px"
-        >
-          Prosseguir
-        </Button>
+        <Link to="/admin/question_type">
+          <Button
+            color="white"
+            backgroundColor="main_red.100"
+            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            my="20px"
+          >
+            Voltar
+          </Button>
+        </Link>
+        <Link to="/admin/choice_question">
+          <Button
+            color="white"
+            backgroundColor="pure_green.100"
+            _hover={{ backgroundColor: 'pure_green.200' }}
+            my="20px"
+          >
+            Prosseguir
+          </Button>
+        </Link>
+
       </Flex>
     </Flex>
   );

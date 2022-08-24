@@ -2,6 +2,7 @@ import {
   Flex, Text, Button,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AppWrapper from '../../../wrapper/AppWrapper';
 import Question from './Question';
 
@@ -57,15 +58,19 @@ function CreateLesson() {
       </Flex>
 
       <Flex w="50%" justifyContent="space-evenly">
+        <Link to="/admin/question_type">
 
-        <Button
-          color="white"
-          backgroundColor="main_red.100"
-          _hover={{ backgroundColor: 'main_red.darker_red' }}
-          my="20px"
-        >
-          Voltar
-        </Button>
+          <Button
+            color="white"
+            backgroundColor="main_red.100"
+            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            my="20px"
+          >
+            Voltar
+
+          </Button>
+        </Link>
+
         <Button
           color="white"
           backgroundColor="pure_green.100"

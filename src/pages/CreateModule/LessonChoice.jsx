@@ -1,8 +1,7 @@
 import {
   Flex, Text, Image,
 } from '@chakra-ui/react';
-
-import AppWrapper from '../../wrapper/AppWrapper';
+import { Link } from 'react-router-dom';
 
 import { TheoricLesson, PraticalLesson } from './assets';
 
@@ -21,37 +20,42 @@ function LessonChoice() {
 
       <Flex w="100%" justifyContent="space-evenly" mt="30px">
 
-        <Flex
-          borderRadius="10px"
-          alignItems="center"
-          justifyContent="space-evenly"
-          flexDirection="column"
-          w="350px"
-          h="400px"
-          backgroundColor="solid_purple.100"
-          cursor="pointer"
-          className={styles['lesson-card']}
-        >
-          <Image src={TheoricLesson} w="150px" h="150px" />
-          <Text fontSize="20px" color="white">Lição teórica</Text>
-        </Flex>
-        <Flex
-          borderRadius="10px"
-          alignItems="center"
-          justifyContent="space-evenly"
-          flexDirection="column"
-          h="400px"
-          w="350px"
-          backgroundColor="solid_purple.100"
-          cursor="pointer"
-          className={styles['lesson-card']}
-        >
-          <Image src={PraticalLesson} w="150px" h="150px" />
-          <Text fontSize="20px" color="white">Lição prática</Text>
-        </Flex>
+        <Link to="/admin/create_theoric_lesson">
+          <Flex
+            borderRadius="10px"
+            alignItems="center"
+            justifyContent="space-evenly"
+            flexDirection="column"
+            w="350px"
+            h="400px"
+            backgroundColor="solid_purple.100"
+            cursor="pointer"
+            className={styles['lesson-card']}
+          >
+            <Image src={TheoricLesson} w="150px" h="150px" />
+            <Text fontSize="20px" color="white">Lição teórica</Text>
+          </Flex>
+        </Link>
+
+        <Link to="/admin/question_type">
+          <Flex
+            borderRadius="10px"
+            alignItems="center"
+            justifyContent="space-evenly"
+            flexDirection="column"
+            h="400px"
+            w="350px"
+            backgroundColor="solid_purple.100"
+            cursor="pointer"
+            className={styles['lesson-card']}
+          >
+            <Image src={PraticalLesson} w="150px" h="150px" />
+            <Text fontSize="20px" color="white">Lição prática</Text>
+          </Flex>
+        </Link>
       </Flex>
     </Flex>
   );
 }
 
-export default AppWrapper(LessonChoice);
+export default LessonChoice;

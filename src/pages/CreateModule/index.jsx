@@ -1,5 +1,6 @@
 import { Flex, Text, Button } from '@chakra-ui/react';
-import AppWrapper from '../../wrapper/AppWrapper';
+import { Link } from 'react-router-dom';
+// import AppWrapper from '../../wrapper/AppWrapper';
 
 function CreateModule() {
   return (
@@ -19,7 +20,7 @@ function CreateModule() {
           _hover={{ backgroundColor: 'pure_green.200' }}
           my="20px"
         >
-          Criar módulo
+          <Link to="/admin/create_module_name">Criar módulo</Link>
 
         </Button>
         <Button
@@ -36,4 +37,4 @@ function CreateModule() {
   );
 }
 
-export default AppWrapper(CreateModule);
+export default CreateModule;

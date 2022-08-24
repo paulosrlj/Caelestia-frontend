@@ -2,7 +2,8 @@ import {
   Flex, Text, Button, Input,
 } from '@chakra-ui/react';
 import { BsFillTrashFill } from 'react-icons/bs';
-import AppWrapper from '../../wrapper/AppWrapper';
+
+import { Link } from 'react-router-dom';
 
 function CreateModuleName() {
   return (
@@ -16,14 +17,14 @@ function CreateModuleName() {
       <Text fontSize="26px">Escolha um nome para o módulo</Text>
 
       <Flex flexDir="column" w="30%" mt="30px">
-        <Input placeholder="Escolha um nome para o módulo" />
+        <Input required placeholder="Escolha um nome para o módulo" />
         <Button
           color="white"
           backgroundColor="pure_green.100"
           _hover={{ backgroundColor: 'pure_green.200' }}
           my="20px"
         >
-          Prosseguir
+          <Link to="/admin/create_lesson">Prosseguir</Link>
 
         </Button>
       </Flex>
@@ -35,4 +36,4 @@ function CreateModuleName() {
   );
 }
 
-export default AppWrapper(CreateModuleName);
+export default CreateModuleName;
