@@ -2,11 +2,11 @@ import {
   Flex, Text, Button, Textarea,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import AppWrapper from '../../wrapper/AppWrapper';
+import { Link, useParams } from 'react-router-dom';
 
 function QuestionDescription() {
   const [, setQuestion] = useState('');
+  const { questionType } = useParams();
 
   return (
     <Flex
@@ -38,7 +38,7 @@ function QuestionDescription() {
             Voltar
           </Button>
         </Link>
-        <Link to="/admin/choice_question">
+        <Link to={questionType === 'image' ? '/admin/image_question' : '/admin/choice_question'}>
           <Button
             color="white"
             backgroundColor="pure_green.100"
@@ -54,4 +54,4 @@ function QuestionDescription() {
   );
 }
 
-export default AppWrapper(QuestionDescription);
+export default QuestionDescription;

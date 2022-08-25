@@ -55,15 +55,16 @@ function CreateLesson() {
       </Flex>
 
       <Flex w="50%" justifyContent="space-evenly">
-        <Button
-          color="white"
-          backgroundColor="blue.infoButton"
-          _hover={{ backgroundColor: 'blue.infoButtonDarker' }}
-          my="20px"
-        >
-          <Link to="/admin/lesson_choice">Criar lição</Link>
-
-        </Button>
+        <Link to="/admin/lesson_choice">
+          <Button
+            color="white"
+            backgroundColor="blue.infoButton"
+            _hover={{ backgroundColor: 'blue.infoButtonDarker' }}
+            my="20px"
+          >
+            Criar lição
+          </Button>
+        </Link>
         <Button
           color="white"
           backgroundColor="main_red.100"

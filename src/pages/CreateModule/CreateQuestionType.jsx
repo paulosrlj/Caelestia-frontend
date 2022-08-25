@@ -13,7 +13,7 @@ function CreateQuestionType() {
       <Text my="20px" fontSize="26px">Escolha uma opção para adicionar a lição</Text>
 
       <Flex flexDir="column" w="30%" my="20px">
-        <Link to="/admin/choice_question_description">
+        <Link to="/admin/choice_question_description/choice">
           <Button
             color="white"
             backgroundColor="pure_green.100"
@@ -24,7 +24,7 @@ function CreateQuestionType() {
             Alternativa com escrita
           </Button>
         </Link>
-        <Link to="/admin/choice_question_description">
+        <Link to="/admin/choice_question_description/image">
           <Button
             color="white"
             backgroundColor="blue.infoButton"

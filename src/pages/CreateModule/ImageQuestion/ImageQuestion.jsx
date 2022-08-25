@@ -91,7 +91,7 @@ function ImageQuestion() {
 
       <Flex w="50%" justifyContent="space-evenly">
 
-        <Link to="/admin/question_type">
+        <Link to="/admin/choice_question_description/image">
           <Button
             color="white"
             backgroundColor="main_red.100"

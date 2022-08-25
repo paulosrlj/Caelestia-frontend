@@ -39,10 +39,11 @@ function App() {
         <Route path="/admin/create_lesson" element={<CreateLesson />} />
         <Route path="/admin/lesson_choice" element={<LessonChoice />} />
         <Route path="/admin/question_type" element={<CreateQuestionType />} />
-        <Route path="/admin/choice_question_description" element={<QuestionDescription />} />
+        <Route path="/admin/choice_question_description/:questionType" element={<QuestionDescription />} />
         <Route path="/admin/choice_question" element={<ChoiseQuestion />} />
         <Route path="/admin/image_question" element={<ImageQuestion />} />
         <Route path="/admin/create_theoric_lesson" element={<CreateTheoricLesson />} />
+        <Route path="*" element={(<h1>not found</h1>)} />
 
       </Routes>
     </ChakraProvider>
