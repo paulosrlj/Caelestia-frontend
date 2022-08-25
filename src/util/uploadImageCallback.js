@@ -11,6 +11,8 @@ async function uploadImageCallBack(file, uploadType) {
     uploadUrl = `profile_image/${file.name + v4()}`;
   } else if (uploadType === 'praticalLessonImage') {
     uploadUrl = `pratical_lesson_image/${file.name + v4()}`;
+  } else if (uploadType === 'achievements') {
+    uploadUrl = `achievements/${file.name + v4()}`;
   }
   const imageRef = ref(storage, uploadUrl);
 

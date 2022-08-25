@@ -7,11 +7,11 @@ function CreateModule() {
     <Flex
       flexDir="column"
       alignItems="center"
-      justifyContent="space-around"
+      justifyContent="center"
       h="100vh"
       w="100vw"
     >
-      <Text fontSize="26px">Escolha uma opção para adicionar a lição</Text>
+      <Text fontSize="26px" mb="20px">Escolha uma opção para adicionar a lição</Text>
 
       <Flex flexDir="column" w="30%">
         <Link to="/admin/create_module_name">

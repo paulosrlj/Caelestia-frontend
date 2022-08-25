@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { Flex, Heading, Button } from '@chakra-ui/react';
+import {
+  Flex, Button, Input,
+} from '@chakra-ui/react';
 
 import { BsFillEraserFill } from 'react-icons/bs';
 
@@ -74,22 +76,8 @@ function EditorContainer() {
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDir="column" w="100vw" overflow="hidden">
-      <Heading
-        textAlign="center"
-        color="solid_purple.100"
-        textShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        fontFamily="'Inter', sans-serif"
-        fontWeight="light"
-        my="30px"
-        fontSize={[
-          '30px',
-          '25px',
-          '25px',
-          '30px',
-        ]}
-      >
-        Lição
-      </Heading>
+      <Input placeholder="Título da lição teórica" w="50%" mb="20px" />
+
       <Editor
         // toolbarHidden
         // readOnly

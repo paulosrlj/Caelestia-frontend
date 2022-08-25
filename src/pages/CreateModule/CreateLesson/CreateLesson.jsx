@@ -2,7 +2,6 @@ import {
   Flex, Text, Button,
 } from '@chakra-ui/react';
 import { BiTestTube } from 'react-icons/bi';
-import { BsFillTrashFill } from 'react-icons/bs';
 import { GiOpenBook } from 'react-icons/gi';
 
 import { Link } from 'react-router-dom';
@@ -65,15 +64,18 @@ function CreateLesson() {
             Criar lição
           </Button>
         </Link>
-        <Button
-          color="white"
-          backgroundColor="main_red.100"
-          _hover={{ backgroundColor: 'main_red.darker_red' }}
-          my="20px"
-        >
-          Adicionar medalha
+        <Link to="/admin/create_lesson/add_achievement">
+          <Button
+            color="white"
+            backgroundColor="main_red.100"
+            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            my="20px"
+          >
+            Adicionar medalha
 
-        </Button>
+          </Button>
+        </Link>
+
         <Button
           color="white"
           backgroundColor="pure_green.100"
@@ -85,9 +87,6 @@ function CreateLesson() {
         </Button>
       </Flex>
 
-      <Flex cursor="pointer" mt="20px" borderRadius="50%" p="15px" backgroundColor="red.500">
-        <BsFillTrashFill color="white" size={40} />
-      </Flex>
     </Flex>
   );
 }

@@ -13,7 +13,8 @@ import Home from './pages/Home';
 import Ranking from './pages/Ranking';
 import ModalMenu from './layout/MenuModal';
 
-import CreateLesson from './pages/CreateModule/CreateLesson';
+import CreateLesson from './pages/CreateModule/CreateLesson/CreateLesson';
+import AddAchievement from './pages/CreateModule/CreateLesson/AddAchievement';
 import LessonChoice from './pages/CreateModule/LessonChoice';
 import ChoiseQuestion from './pages/CreateModule/ChoiceQuestion/ChoiceQuestion';
 import CreateQuestionType from './pages/CreateModule/CreateQuestionType';
@@ -37,6 +38,8 @@ function App() {
         <Route path="/admin/create_module" element={<CreateModule />} />
         <Route path="/admin/create_module_name" element={<CreateModuleName />} />
         <Route path="/admin/create_lesson" element={<CreateLesson />} />
+        <Route path="/admin/create_lesson/add_achievement" element={<AddAchievement />} />
+
         <Route path="/admin/lesson_choice" element={<LessonChoice />} />
         <Route path="/admin/question_type" element={<CreateQuestionType />} />
         <Route path="/admin/choice_question_description/:questionType" element={<QuestionDescription />} />

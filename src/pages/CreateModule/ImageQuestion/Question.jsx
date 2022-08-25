@@ -1,14 +1,12 @@
 /* eslint-disable no-unused-vars */
 import {
-  Flex, Image, Input, Text,
+  Flex, Image, Input,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { IoMdCheckmark } from 'react-icons/io';
 import ImageUploading from 'react-images-uploading';
 import { toast } from 'react-toastify';
 import uploadImageCallBack from '../../../util/uploadImageCallback';
 
-import CustomToastContainer from '../../../components/Toast/CustomToastContainer';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Question({
