@@ -14,6 +14,7 @@ const theme = extendTheme(
     colors: {
       solid_purple: {
         100: '#A044FF',
+        darker_purple: '#6f30ad',
       },
       pure_green: {
         100: '#00CD96',

@@ -54,6 +54,17 @@ function CreateLesson() {
       </Flex>
 
       <Flex w="50%" justifyContent="space-evenly">
+        <Link to="/admin/create_module_name">
+          <Button
+            color="white"
+            backgroundColor="main_red.100"
+            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            my="20px"
+          >
+            Voltar
+          </Button>
+        </Link>
+
         <Link to="/admin/lesson_choice">
           <Button
             color="white"

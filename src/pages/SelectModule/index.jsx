@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { Flex } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 
-import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowLeft } from 'react-icons/md';
-import AppWrapper from '../../wrapper/AppWrapper';
+import IndividualModule from './components/IndividualModule';
 
 function SelectModule() {
   const modules = [
@@ -29,59 +27,26 @@ function SelectModule() {
     },
   ];
 
-  const [carouselIndex, setCarouselIndex] = useState(0);
-
   const handleNextClick = () => {
 
   };
 
   return (
 
-    <Flex
-      h="100vh"
-      justifyContent="space-around"
-      alignItems="center"
-      bgColor="yellowgreen"
-    >
+    <Flex w="100%" alignItems="center" justifyContent="center" my="20px">
       <Flex
-        borderRadius="20px"
-        h="400px"
-        bgColor="blue"
-        flex="0 0 calc(20%)"
-        transform="scale(0.8)"
-        transition="all 0.5s ease"
-        translateX="200px"
+        w="80%"
+        flexDir="column"
       >
-        adasdsad
-      </Flex>
+        <Heading textAlign="center" my="20px">Seleção de módulo</Heading>
 
-      <Flex h="400px" bgColor="red" flex="0 0 calc(20%)">
-        asdasd
-      </Flex>
+        {modules.map((m) => <IndividualModule>{m.name}</IndividualModule>)}
 
-      <Flex
-        transform="scale(0.8)"
-        h="400px"
-        bgColor="yellow"
-        flex="0 0 calc(20%)"
-      >
-        asd
       </Flex>
-
-      <MdOutlineKeyboardArrowLeft
-        cursor="pointer"
-        size={40}
-        style={{ position: 'absolute', top: '50%', left: '30%' }}
-      />
-      <MdOutlineKeyboardArrowRight
-        cursor="pointer"
-        size={40}
-        style={{ position: 'absolute', top: '50%', right: '30%' }}
-      />
 
     </Flex>
 
   );
 }
 
-export default AppWrapper(SelectModule);
+export default SelectModule;

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {
   Flex, Button, Input,
 } from '@chakra-ui/react';
@@ -105,8 +106,13 @@ function EditorContainer() {
       />
 
       <Flex justifyContent="space-around" w="20%" my="20px">
-        <Button colorScheme="red">Voltar</Button>
-        <Button colorScheme="whatsapp" onClick={handleSubmit}>Salvar</Button>
+        <Link to="/admin/lesson_choice">
+          <Button colorScheme="red">Voltar</Button>
+
+        </Link>
+        <Link to="/admin/create_lesson">
+          <Button colorScheme="whatsapp" onClick={handleSubmit}>Salvar</Button>
+        </Link>
       </Flex>
 
     </Flex>

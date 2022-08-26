@@ -36,7 +36,17 @@ function CreateQuestionType() {
             Alternativa com imagens
           </Button>
         </Link>
-
+        <Link to="/admin/lesson_choice">
+          <Button
+            color="white"
+            backgroundColor="main_red.100"
+            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            my="20px"
+            w="100%"
+          >
+            Voltar
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   );

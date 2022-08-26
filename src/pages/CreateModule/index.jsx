@@ -1,6 +1,5 @@
 import { Flex, Text, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-// import AppWrapper from '../../wrapper/AppWrapper';
 
 function CreateModule() {
   return (

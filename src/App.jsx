@@ -3,6 +3,8 @@ import './App.css';
 
 import { ChakraProvider } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
+import { CreateModuleProvider } from './context/CreateModuleContext';
+
 import { theme } from './config/chakra-ui-config';
 import CreateModule from './pages/CreateModule';
 import CreateModuleName from './pages/CreateModule/CreateModuleName';
@@ -21,6 +23,7 @@ import CreateQuestionType from './pages/CreateModule/CreateQuestionType';
 import ImageQuestion from './pages/CreateModule/ImageQuestion/ImageQuestion';
 import CreateTheoricLesson from './pages/CreateModule/CreateTheoricLesson';
 import QuestionDescription from './pages/CreateModule/QuestionDescription';
+import CustomToastContainer from './components/Toast/CustomToastContainer';
 
 function App() {
   return (
@@ -33,22 +36,28 @@ function App() {
       {/* <Home /> */}
       {/* <Ranking /> */}
 
-      <Routes>
+      <CreateModuleProvider>
+        <Routes>
 
-        <Route path="/admin/create_module" element={<CreateModule />} />
-        <Route path="/admin/create_module_name" element={<CreateModuleName />} />
-        <Route path="/admin/create_lesson" element={<CreateLesson />} />
-        <Route path="/admin/create_lesson/add_achievement" element={<AddAchievement />} />
+          <Route path="/admin/create_module" element={<CreateModule />} />
+          <Route path="/admin/create_module_name" element={<CreateModuleName />} />
+          <Route path="/admin/create_lesson" element={<CreateLesson />} />
+          <Route path="/admin/create_lesson/add_achievement" element={<AddAchievement />} />
 
-        <Route path="/admin/lesson_choice" element={<LessonChoice />} />
-        <Route path="/admin/question_type" element={<CreateQuestionType />} />
-        <Route path="/admin/choice_question_description/:questionType" element={<QuestionDescription />} />
-        <Route path="/admin/choice_question" element={<ChoiseQuestion />} />
-        <Route path="/admin/image_question" element={<ImageQuestion />} />
-        <Route path="/admin/create_theoric_lesson" element={<CreateTheoricLesson />} />
-        <Route path="*" element={(<h1>not found</h1>)} />
+          <Route path="/admin/lesson_choice" element={<LessonChoice />} />
+          <Route path="/admin/question_type" element={<CreateQuestionType />} />
+          <Route path="/admin/choice_question_description/:questionType" element={<QuestionDescription />} />
+          <Route path="/admin/choice_question" element={<ChoiseQuestion />} />
+          <Route path="/admin/image_question" element={<ImageQuestion />} />
+          <Route path="/admin/create_theoric_lesson" element={<CreateTheoricLesson />} />
 
-      </Routes>
+          <Route path="/" element={<SelectModule />} />
+
+          <Route path="*" element={(<h1>not found</h1>)} />
+        </Routes>
+      </CreateModuleProvider>
+
+      <CustomToastContainer />
     </ChakraProvider>
   );
 }
