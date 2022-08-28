@@ -24,6 +24,7 @@ import ImageQuestion from './pages/CreateModule/ImageQuestion/ImageQuestion';
 import CreateTheoricLesson from './pages/CreateModule/CreateTheoricLesson';
 import QuestionDescription from './pages/CreateModule/QuestionDescription';
 import CustomToastContainer from './components/Toast/CustomToastContainer';
+import SelectLesson from './pages/SelectLesson';
 
 function App() {
   return (

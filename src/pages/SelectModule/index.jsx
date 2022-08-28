@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { Flex, Heading, Text } from '@chakra-ui/react';
-
-import IndividualModule from './components/IndividualModule';
+import Slider from '../../components/Slider';
 
 function SelectModule() {
   const modules = [
@@ -9,43 +6,52 @@ function SelectModule() {
       id: 1,
       name: 'Astronomia antiga',
       amountLessons: 20,
+      description: 'Conceitos básicos da astronomia antiga',
+      imageUrl: 'https://picsum.photos/200/300',
+      unlockable: false,
+      completedLessons: 3,
     },
     {
       id: 2,
       name: 'Astronomia no dia a dia',
       amountLessons: 12,
+      imageUrl: 'https://picsum.photos/200/300',
+      description: 'Conceitos básicos da astronomia antiga',
+      unlockable: true,
+      completedLessons: 3,
     },
     {
       id: 3,
       name: 'O sistema solar',
       amountLessons: 14,
+      imageUrl: 'https://picsum.photos/200/300',
+      description: 'Conceitos básicos do sistema solar',
+      unlockable: false,
+      completedLessons: 3,
     },
     {
       id: 4,
       name: 'Cosmologia',
       amountLessons: 6,
+      imageUrl: 'https://picsum.photos/200/300',
+      description: 'Conceitos básicos do sistema solar',
+      unlockable: true,
+      completedLessons: 3,
     },
+    {
+      id: 5,
+      name: 'Cosmologia',
+      amountLessons: 6,
+      imageUrl: 'https://picsum.photos/200/300',
+      description: 'Conceitos básicos do sistema solar',
+      unlockable: false,
+      completedLessons: 3,
+    },
+
   ];
 
-  const handleNextClick = () => {
-
-  };
-
   return (
-
-    <Flex w="100%" alignItems="center" justifyContent="center" my="20px">
-      <Flex
-        w="80%"
-        flexDir="column"
-      >
-        <Heading textAlign="center" my="20px">Seleção de módulo</Heading>
-
-        {modules.map((m) => <IndividualModule>{m.name}</IndividualModule>)}
-
-      </Flex>
-
-    </Flex>
-
+    <Slider data={modules} />
   );
 }
 

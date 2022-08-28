@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { GiOpenBook } from 'react-icons/gi';
 
-function IndividualModule({ children }) {
+function IndividualModule({ children, handleClick }) {
   return (
     <Flex
       w="100%"
@@ -12,6 +12,7 @@ function IndividualModule({ children }) {
       alignItems="center"
       _hover={{ backgroundColor: 'solid_purple.darker_purple' }}
       cursor="pointer"
+      onClick={handleClick}
     >
       <GiOpenBook size={20} color="white" />
       <Text color="white" ml="10px">{children}</Text>
