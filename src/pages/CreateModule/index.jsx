@@ -25,6 +25,17 @@ function CreateModule() {
 
           </Button>
         </Link>
+        <Link to="/admin/create_lesson">
+          <Button
+            color="white"
+            backgroundColor="solid_purple.100"
+            _hover={{ backgroundColor: 'solid_purple.darker_purple' }}
+            w="100%"
+          >
+            Adicionar lição a módulo já existente
+
+          </Button>
+        </Link>
         <Button
           color="white"
           backgroundColor="blue.infoButton"

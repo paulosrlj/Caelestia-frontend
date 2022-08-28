@@ -53,13 +53,14 @@ function CreateLesson() {
 
       </Flex>
 
-      <Flex w="50%" justifyContent="space-evenly">
+      <Flex w="60%">
         <Link to="/admin/create_module_name">
           <Button
             color="white"
             backgroundColor="main_red.100"
             _hover={{ backgroundColor: 'main_red.darker_red' }}
             my="20px"
+            mx="10px"
           >
             Voltar
           </Button>
@@ -70,6 +71,7 @@ function CreateLesson() {
             color="white"
             backgroundColor="blue.infoButton"
             _hover={{ backgroundColor: 'blue.infoButtonDarker' }}
+            mx="10px"
             my="20px"
           >
             Criar lição
@@ -78,8 +80,9 @@ function CreateLesson() {
         <Link to="/admin/create_lesson/add_achievement">
           <Button
             color="white"
-            backgroundColor="main_red.100"
-            _hover={{ backgroundColor: 'main_red.darker_red' }}
+            backgroundColor="pure_green.100"
+            _hover={{ backgroundColor: 'pure_green.200' }}
+            mx="10px"
             my="20px"
           >
             Adicionar medalha
@@ -87,15 +90,6 @@ function CreateLesson() {
           </Button>
         </Link>
 
-        <Button
-          color="white"
-          backgroundColor="pure_green.100"
-          _hover={{ backgroundColor: 'pure_green.200' }}
-          my="20px"
-        >
-          Salvar
-
-        </Button>
       </Flex>
 
     </Flex>

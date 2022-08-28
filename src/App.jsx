@@ -25,6 +25,7 @@ import CreateTheoricLesson from './pages/CreateModule/CreateTheoricLesson';
 import QuestionDescription from './pages/CreateModule/QuestionDescription';
 import CustomToastContainer from './components/Toast/CustomToastContainer';
 import SelectLesson from './pages/SelectLesson';
+import CreateDescriptionTheoricLesson from './pages/CreateModule/CreateDescriptionTheoricLesson';
 
 function App() {
   return (
@@ -50,9 +51,10 @@ function App() {
           <Route path="/admin/choice_question_description/:questionType" element={<QuestionDescription />} />
           <Route path="/admin/choice_question" element={<ChoiseQuestion />} />
           <Route path="/admin/image_question" element={<ImageQuestion />} />
+          <Route path="/admin/question_type/theoric_lesson" element={<CreateDescriptionTheoricLesson />} />
           <Route path="/admin/create_theoric_lesson" element={<CreateTheoricLesson />} />
 
-          <Route path="/" element={<SelectModule />} />
+          <Route path="/" element={<CreateModule />} />
 
           <Route path="*" element={(<h1>not found</h1>)} />
         </Routes>

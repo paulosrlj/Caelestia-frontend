@@ -1,20 +1,18 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Context } from '../../context/CreateModuleContext';
 import CreateLessonForm from '../../layout/CreateLessonForm';
 
-function QuestionDescription() {
+function CreateDescriptionTheoricLesson() {
   const {
-    setPraticalLesson,
+    setTheoricLesson,
   } = useContext(Context);
 
-  const { questionType } = useParams();
-
-  const handleChoiceQuestion = (e) => {
+  const handleTheoricLesson = (e) => {
     const { value, name } = e.target;
 
-    setPraticalLesson((oldState) => {
+    setTheoricLesson((oldState) => {
       const newState = { ...oldState };
       newState[name] = value;
       return newState;
@@ -31,7 +29,7 @@ function QuestionDescription() {
     >
       <Text my="20px" fontSize="26px">Escreva as informações da questão:</Text>
 
-      <CreateLessonForm handleFormChanges={handleChoiceQuestion} />
+      <CreateLessonForm handleFormChanges={handleTheoricLesson} />
 
       <Flex w="50%" justifyContent="space-evenly">
         <Link to="/admin/question_type">
@@ -44,7 +42,7 @@ function QuestionDescription() {
             Voltar
           </Button>
         </Link>
-        <Link to={questionType === 'image' ? '/admin/image_question' : '/admin/choice_question'}>
+        <Link to="/admin/create_theoric_lesson">
           <Button
             color="white"
             backgroundColor="pure_green.100"
@@ -60,4 +58,4 @@ function QuestionDescription() {
   );
 }
 
-export default QuestionDescription;
+export default CreateDescriptionTheoricLesson;

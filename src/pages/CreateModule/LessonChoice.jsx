@@ -20,7 +20,7 @@ function LessonChoice() {
 
       <Flex w="100%" justifyContent="space-evenly" mt="30px">
 
-        <Link to="/admin/create_theoric_lesson">
+        <Link to="/admin/question_type/theoric_lesson">
           <Flex
             borderRadius="10px"
             alignItems="center"
