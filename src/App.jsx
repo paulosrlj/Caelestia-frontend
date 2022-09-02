@@ -26,6 +26,7 @@ import QuestionDescription from './pages/CreateModule/QuestionDescription';
 import CustomToastContainer from './components/Toast/CustomToastContainer';
 import SelectLesson from './pages/SelectLesson';
 import CreateDescriptionTheoricLesson from './pages/CreateModule/CreateDescriptionTheoricLesson';
+import AskModuleId from './pages/CreateModule/AskModuleId';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Routes>
 
           <Route path="/admin/create_module" element={<CreateModule />} />
+          <Route path="/admin/ask_module_id" element={<AskModuleId />} />
           <Route path="/admin/create_module_name" element={<CreateModuleName />} />
           <Route path="/admin/create_lesson" element={<CreateLesson />} />
           <Route path="/admin/create_lesson/add_achievement" element={<AddAchievement />} />

@@ -25,7 +25,7 @@ function CreateModule() {
 
           </Button>
         </Link>
-        <Link to="/admin/create_lesson">
+        <Link to="/admin/ask_module_id">
           <Button
             color="white"
             backgroundColor="solid_purple.100"
@@ -36,15 +36,6 @@ function CreateModule() {
 
           </Button>
         </Link>
-        <Button
-          color="white"
-          backgroundColor="blue.infoButton"
-          _hover={{ backgroundColor: 'blue.infoButtonDarker' }}
-          my="20px"
-        >
-          Editar módulo
-
-        </Button>
       </Flex>
     </Flex>
   );
