@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom';
 
 import ImageUploading from 'react-images-uploading';
 import { toast } from 'react-toastify';
-import uploadImageCallBack from '../../../util/uploadImageCallback';
 
 import 'react-toastify/dist/ReactToastify.css';
-import CustomToastContainer from '../../../components/Toast/CustomToastContainer';
+import uploadImageCallBack from '../../util/uploadImageCallback';
 
 function AddAchievement() {
   const [image, setImage] = useState([]);
@@ -122,7 +121,6 @@ function AddAchievement() {
         </Link>
 
       </Flex>
-      <CustomToastContainer />
     </Flex>
   );
 }

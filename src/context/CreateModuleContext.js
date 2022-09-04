@@ -8,6 +8,8 @@ function CreateModuleProvider({ children }) {
     moduleId: '',
   });
 
+  const [allModuleLessons, setAllModuleLessons] = useState([]);
+
   const [praticalLesson, setPraticalLesson] = useState({
     lessonName: '',
     xpEarned: 0,
@@ -41,7 +43,9 @@ function CreateModuleProvider({ children }) {
     setPraticalLesson,
     theoricLesson,
     setTheoricLesson,
-  }), [moduleInfo, praticalLesson, theoricLesson]);
+    allModuleLessons,
+    setAllModuleLessons,
+  }), [moduleInfo, praticalLesson, theoricLesson, allModuleLessons]);
 
   return (
     <Context.Provider

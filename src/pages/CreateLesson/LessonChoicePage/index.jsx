@@ -1,13 +1,10 @@
-import {
-  Flex, Text, Image,
-} from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-
 import { TheoricLesson, PraticalLesson } from './assets';
 
 import styles from './lessonChoice.module.scss';
 
-function LessonChoice() {
+function LessonChoicePage() {
   return (
     <Flex
       flexDir="column"
@@ -20,7 +17,7 @@ function LessonChoice() {
 
       <Flex w="100%" justifyContent="space-evenly" mt="30px">
 
-        <Link to="/admin/question_type/theoric_lesson">
+        <Link to="/admin/createTheoricLesson">
           <Flex
             borderRadius="10px"
             alignItems="center"
@@ -37,7 +34,7 @@ function LessonChoice() {
           </Flex>
         </Link>
 
-        <Link to="/admin/question_type">
+        <Link to="/admin/createPraticalLesson">
           <Flex
             borderRadius="10px"
             alignItems="center"
@@ -58,4 +55,4 @@ function LessonChoice() {
   );
 }
 
-export default LessonChoice;
+export default LessonChoicePage;

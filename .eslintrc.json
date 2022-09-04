@@ -29,6 +29,7 @@
     "react/self-closing-comp": "warn",
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "consistent-return": "off"
   }
 }

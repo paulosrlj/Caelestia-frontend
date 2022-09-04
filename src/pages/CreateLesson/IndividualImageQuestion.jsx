@@ -1,18 +1,11 @@
-/* eslint-disable no-unused-vars */
-import {
-  Flex, Image, Input,
-} from '@chakra-ui/react';
+import { Flex, Image, Input } from '@chakra-ui/react';
 import { useState } from 'react';
 import ImageUploading from 'react-images-uploading';
-import { toast } from 'react-toastify';
-import uploadImageCallBack from '../../../util/uploadImageCallback';
 
-import 'react-toastify/dist/ReactToastify.css';
-
-function Question({
-  id, isCorrect, toggleCorrectAnwser, setAnswers, setImages,
+function IndividualImageQuestion({
+  id, setAnswers, setImages,
 }) {
-  const [image, setImage] = useState([]);
+  const [image] = useState([]);
   const [imageSrcUpload, setimageSrcUpload] = useState(null);
 
   const handleInputChange = (e) => {
@@ -20,7 +13,7 @@ function Question({
 
     setAnswers((oldState) => {
       const newState = { ...oldState };
-      newState[id] = value;
+      newState[`alternative${id}`] = value;
       return newState;
     });
   };
@@ -35,21 +28,6 @@ function Question({
       newState[id] = imageList;
       return newState;
     });
-  };
-
-  const uploadImage = async () => {
-    const { data: { link } } = await toast.promise(
-      uploadImageCallBack(image[0].file, 'praticalLessonImage'),
-      {
-        pending: 'Fazendo upload...',
-        success: 'Upload de fotos concluído',
-        error: 'Ocorreu um problema.',
-      },
-    );
-
-    if (link !== undefined) {
-      setimageSrcUpload(link);
-    }
   };
 
   return (
@@ -77,7 +55,6 @@ function Question({
         >
           {({
             onImageUpload,
-            onImageRemove,
             dragProps,
           }) => (
             <Image
@@ -102,6 +79,9 @@ function Question({
           backgroundColor="white"
           mr="10px"
           onChange={handleInputChange}
+          borderWidth="1px"
+          borderStyle="solid"
+          borderColor="solid_purple.100"
         />
       </Flex>
     </Flex>
@@ -109,4 +89,4 @@ function Question({
   );
 }
 
-export default Question;
+export default IndividualImageQuestion;
