@@ -4,13 +4,13 @@ import {
 
 import { BsFillEraserFill } from 'react-icons/bs';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import { uploadTheoricLessonImageCallBack } from './uploadImageCallback';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-function EditorContainer({ handleEditorChange, isReadOnly }) {
+function EditorContainer({ handleEditorChange, isReadOnly, contentToDisplay }) {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const onEditorStateChange = (newEditorState) => {
@@ -25,19 +25,12 @@ function EditorContainer({ handleEditorChange, isReadOnly }) {
     });
   };
 
-  useEffect(() => {
-    if (localStorage.getItem('texto') !== null) {
-      const textoBuscado = EditorState.createWithContent(convertFromRaw(JSON.parse(localStorage.getItem('texto'))));
-      setEditorState(textoBuscado);
-    }
-  }, []);
-
   return (
     <Flex
       justifyContent="center"
       alignItems="center"
       flexDir="column"
-      w="100vw"
+      // w="100vw"
       overflow="hidden"
       my="20px"
     >
@@ -50,8 +43,11 @@ function EditorContainer({ handleEditorChange, isReadOnly }) {
           border: '1px solid #A044FF',
           padding: '10px',
           boxShadow: '1px 1px 5px #A044FF',
+          borderRadius: '5px',
         }}
-        editorState={editorState}
+        editorState={contentToDisplay ? EditorState.createWithContent(
+          convertFromRaw(JSON.parse(contentToDisplay)),
+        ) : editorState}
         onEditorStateChange={isReadOnly ? '' : onEditorStateChange}
         toolbar={{
           inline: { inDropdown: true },
