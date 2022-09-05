@@ -18,6 +18,7 @@ import CreateLesson from './pages/CreateLesson';
 // import AddAchievement from './pages/CreateModule/CreateLesson/AddAchievement';
 import LessonChoice from './pages/CreateLesson/LessonChoicePage';
 import CustomToastContainer from './components/Toast/CustomToastContainer';
+import Choice from './pages/CompleteLesson/PraticalLesson/Choice';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/admin/createTheoricLesson" element={<CreateTheoricLesson />} />
           <Route path="/admin/createLesson" element={<LessonChoice />} />
           <Route path="/admin/createModule" element={<CreateModule />} />
+          <Route path="/" element={<Choice />} />
 
           <Route path="*" element={(<h1>not found</h1>)} />
         </Routes>
