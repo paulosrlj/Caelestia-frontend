@@ -21,6 +21,7 @@ import CustomToastContainer from './components/Toast/CustomToastContainer';
 import Choice from './pages/CompleteLesson/PraticalLesson/Choice';
 import TheoricLesson from './pages/CompleteLesson/TheoricLesson';
 import NotFound from './pages/NotFound';
+import Inventory from './pages/Inventory';
 
 function App() {
   return (
@@ -45,7 +46,11 @@ function App() {
           <Route path="/admin/createTheoricLesson" element={<CreateTheoricLesson />} />
           <Route path="/admin/createLesson" element={<LessonChoice />} />
           <Route path="/admin/createModule" element={<CreateModule />} />
-          <Route path="/" element={<TheoricLesson lessonId="3d3f0393-ed18-477c-ac94-07935e927999" />} />
+          <Route
+            path="/theoricLesson/:lessonId"
+            element={<TheoricLesson lessonId="3d3f0393-ed18-477c-ac94-07935e927999" />}
+          />
+          <Route path="/" element={<Inventory />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
