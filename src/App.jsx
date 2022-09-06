@@ -22,6 +22,7 @@ import Choice from './pages/CompleteLesson/PraticalLesson/Choice';
 import TheoricLesson from './pages/CompleteLesson/TheoricLesson';
 import NotFound from './pages/NotFound';
 import Inventory from './pages/Inventory';
+import Store from './pages/Store';
 
 function App() {
   return (
@@ -50,7 +51,8 @@ function App() {
             path="/theoricLesson/:lessonId"
             element={<TheoricLesson lessonId="3d3f0393-ed18-477c-ac94-07935e927999" />}
           />
-          <Route path="/" element={<Inventory />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/" element={<Store />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
