@@ -29,6 +29,7 @@ function BuyConfirmationModal({ isOpen, onClose }) {
             color="white"
             backgroundColor="main_red.100"
             _hover={{ backgroundColor: 'main_red.darker_red' }}
+            onClick={onClose}
           >
             Não
           </Button>
