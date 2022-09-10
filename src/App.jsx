@@ -24,6 +24,7 @@ import NotFound from './pages/NotFound';
 import Inventory from './pages/Inventory';
 import Store from './pages/Store';
 import Classroom from './pages/Classroom';
+import ClassroomPlayer from './pages/Classroom/player';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/store" element={<Store />} />
           <Route path="/classroom" element={<Classroom />} />
+          <Route path="/classroom/player" element={<ClassroomPlayer />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

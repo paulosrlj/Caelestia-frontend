@@ -2,7 +2,7 @@ import {
   Box, Flex, Image, Text,
 } from '@chakra-ui/react';
 
-function PageBox({ image, title }) {
+function PageBox({ image, title, onClick }) {
   return (
     <Box
       borderRadius="lg"
@@ -21,6 +21,7 @@ function PageBox({ image, title }) {
       ]}
       boxShadow="1px 1px 5px rgba(0, 0, 0, 0.5)"
       _hover={{ transform: 'scale(0.85)' }}
+      onClick={onClick}
     >
       <Flex
         flexDirection="column"
