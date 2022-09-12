@@ -26,6 +26,7 @@ import Store from './pages/Store';
 import Classroom from './pages/Classroom';
 import ClassroomPlayer from './pages/Classroom/player';
 import ClassroomTeacher from './pages/Classroom/teacher';
+import ClassroomManagement from './pages/Classroom/teacher/ClassroomManagement';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
           <Route path="/admin/choice_question_description/:questionType" element=
           {<QuestionDescription />} />
            */}
-
+          <Route path="/home" element={<Home />} />
           <Route path="/admin/createPraticalLesson" element={<CreateLesson />} />
           <Route path="/admin/createTheoricLesson" element={<CreateTheoricLesson />} />
           <Route path="/admin/createLesson" element={<LessonChoice />} />
@@ -59,6 +60,7 @@ function App() {
           <Route path="/classroom" element={<Classroom />} />
           <Route path="/classroom/player" element={<ClassroomPlayer />} />
           <Route path="/classroom/teacher" element={<ClassroomTeacher />} />
+          <Route path="/classroom/teacher/:classroomCode" element={<ClassroomManagement />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

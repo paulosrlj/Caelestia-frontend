@@ -32,7 +32,7 @@ function CreateClassroomForm() {
       }}
     >
       {({ isSubmitting }) => (
-        <Form>
+        <Form style={{ width: '100%' }}>
           <Field type="text" name="classroomName">
             {({ field, form }) => (
               <FormControl isInvalid={form.errors.classroomName} isRequired mb="10px">

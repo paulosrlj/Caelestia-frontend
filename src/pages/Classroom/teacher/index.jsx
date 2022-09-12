@@ -95,7 +95,6 @@ function ClassroomTeacher() {
               />
 
               <IconButton
-            // colorScheme="blue"
                 aria-label="Search database"
                 icon={<SearchIcon p="2px" h="7" w="7" />}
                 fontSize="20px"
@@ -106,7 +105,6 @@ function ClassroomTeacher() {
                 color="white"
               />
             </Flex>
-
             <ClassroomBox classroomData={fetchedClass} />
           </TabPanel>
         </TabPanels>
