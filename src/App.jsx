@@ -56,6 +56,7 @@ function App() {
             element={<TheoricLesson lessonId="3d3f0393-ed18-477c-ac94-07935e927999" />}
           />
           <Route path="/inventory" element={<Inventory />} />
+          <Route path="/ranking" element={<Ranking />} />
           <Route path="/store" element={<Store />} />
           <Route path="/classroom" element={<Classroom />} />
           <Route path="/classroom/player" element={<ClassroomPlayer />} />

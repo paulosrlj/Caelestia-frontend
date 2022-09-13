@@ -1,5 +1,4 @@
 import { Flex, Text } from '@chakra-ui/react';
-import AppWrapper from '../../wrapper/AppWrapper';
 import PlayerList from './PlayerList';
 import RankingCrest from './RankingCrest';
 
@@ -37,4 +36,4 @@ function Ranking() {
   );
 }
 
-export default AppWrapper(Ranking);
+export default Ranking;
