@@ -5,7 +5,9 @@ import { HiOutlineUserGroup } from 'react-icons/hi';
 import GenericText from '../../../components/Typography/GenericText';
 import PageBox from '../../../layout/MenuModal/Box';
 
-import { ActivityIcon, StudentsIcon, OutIcon } from '../assets';
+import {
+  ActivityIcon, StudentsIcon, OutIcon, BackIcon,
+} from '../assets';
 import DisplayPlayerOrActivityModal from '../DisplayPlayerOrActivityModal';
 
 function ClassroomPlayer() {
@@ -146,9 +148,11 @@ function ClassroomPlayer() {
               title="Alunos"
               onClick={() => [setModalToPlayers(), handleAchievementModalOpen()]}
             />
+            <PageBox image={BackIcon} title="Voltar" onClick={quitClassroom} />
+
             <PageBox image={OutIcon} title="Sair da sala" onClick={quitClassroom} />
 
-            <DisplayPlayerOrActivityModal modalType={modalType} isOpen={isOpen} onClose={onClose} />
+            <DisplayPlayerOrActivityModal modalTitle="Alunos da sala de aula" modalType={modalType} isOpen={isOpen} onClose={onClose} />
           </Flex>
         </Flex>
 

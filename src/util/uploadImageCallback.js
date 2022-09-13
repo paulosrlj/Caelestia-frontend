@@ -6,13 +6,17 @@ import { storage } from '../config/firebase';
 
 async function uploadImageCallBack(file, uploadType) {
   let uploadUrl = '';
-
+  console.log(file);
   if (uploadType === 'profileImage') {
     uploadUrl = `profile_image/${file.name + v4()}`;
   } else if (uploadType === 'praticalLessonImage') {
     uploadUrl = `pratical_lesson_image/${file.name + v4()}`;
   } else if (uploadType === 'achievements') {
     uploadUrl = `achievements/${file.name + v4()}`;
+  } else if (uploadType === 'classroomFiles') {
+    uploadUrl = `classroomFiles/${file.name + v4()}`;
+  } else {
+    uploadUrl = `others/${file.name + v4()}`;
   }
   const imageRef = ref(storage, uploadUrl);
 

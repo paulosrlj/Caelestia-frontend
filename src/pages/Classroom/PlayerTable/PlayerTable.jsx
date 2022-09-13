@@ -91,6 +91,7 @@ function PlayerTable({ players, isTeacher }) {
         activityName: 'Atividade 1',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
         dueDate: new Date().toLocaleDateString(),
+        completedDate: new Date().toLocaleDateString(),
         assignedLessons: [
           {
             lessonName: 'Lição prática 1',
@@ -108,6 +109,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -115,6 +117,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -122,6 +125,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -129,6 +133,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -136,6 +141,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -143,6 +149,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -150,6 +157,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -157,6 +165,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -164,6 +173,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -171,6 +181,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -178,6 +189,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -185,6 +197,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -192,6 +205,7 @@ function PlayerTable({ players, isTeacher }) {
       {
         activityName: 'Atividade 2',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsam explicabo eaque distinctio quod pariatur sunt iure autem quasi reprehenderit vero, tempore architecto, ipsa molestias libero quam, excepturi cumque! Eos.',
+        completedDate: new Date().toLocaleDateString(),
         dueDate: new Date().toLocaleDateString(),
         assignedLessons: [
         ],
@@ -224,6 +238,11 @@ function PlayerTable({ players, isTeacher }) {
                 Pontos totais
               </Tooltip>
             </Th>
+            <Th color="white">
+              <Tooltip label="Ranking" aria-label="A tooltip">
+                Ranking
+              </Tooltip>
+            </Th>
             <Th color="white" isNumeric />
           </Tr>
         </Thead>
@@ -233,6 +252,7 @@ function PlayerTable({ players, isTeacher }) {
               <Td>{player.name}</Td>
               <Td>{player.nickname}</Td>
               <Td>{player.totalPoints}</Td>
+              <Td>{player.ranking}</Td>
               {isTeacher ? (
                 <Td isNumeric onClick={handleAchievementModalOpen}>
                   <FaInfoCircle cursor="pointer" size={20} />

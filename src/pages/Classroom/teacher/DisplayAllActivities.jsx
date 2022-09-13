@@ -3,6 +3,27 @@ import {
 } from '@chakra-ui/react';
 
 function DisplayAllActivities() {
+  const activities = [
+    {
+      name: 'Atividade prática I',
+      description: 'Descrição da atividade',
+      dueDate: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+      createdAt: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+    },
+    {
+      name: 'Atividade prática I',
+      description: 'Descrição da atividade',
+      dueDate: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+      createdAt: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+    },
+    {
+      name: 'Atividade prática I',
+      description: 'Descrição da atividade',
+      dueDate: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+      createdAt: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
+    },
+  ];
+
   return (
     <TableContainer>
       <Table variant="striped" colorScheme="blackAlpha">
@@ -23,18 +44,17 @@ function DisplayAllActivities() {
                 Data de entrega
               </Tooltip>
             </Th>
-            <Th color="white" isNumeric />
+            {/* <Th color="white" isNumeric /> */}
           </Tr>
         </Thead>
         <Tbody>
-
-          <Tr>
-            <Td>asd</Td>
-            <Td>asd</Td>
-            <Td>asd</Td>
-
-          </Tr>
-
+          {activities.map((a) => (
+            <Tr>
+              <Td>{a.name}</Td>
+              <Td>{a.createdAt}</Td>
+              <Td>{a.dueDate}</Td>
+            </Tr>
+          ))}
         </Tbody>
 
       </Table>

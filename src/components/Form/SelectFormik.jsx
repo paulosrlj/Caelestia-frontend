@@ -3,12 +3,17 @@ import {
 } from '@chakra-ui/react';
 
 function SelectFormik({
-  name, field, form, placeholder, formLabel, selectOptions, onSelectChange,
+  value, name, field, form,
+  formLabel, selectOptions, onSelectChange,
 }) {
   return (
     <FormControl isInvalid={form.errors[name]} isRequired mb="10px">
       <FormLabel>{formLabel}</FormLabel>
-      <Select placeholder={placeholder} {...field} onChange={onSelectChange}>
+      <Select
+        {...field}
+        onChange={onSelectChange}
+        value={value}
+      >
         {selectOptions.map((opt) => (
           <option key={opt.id} value={opt.name}>{opt.name}</option>
         ))}

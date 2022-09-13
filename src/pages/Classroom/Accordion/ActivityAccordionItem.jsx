@@ -4,6 +4,8 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
+import { FiExternalLink } from 'react-icons/fi';
+
 function ActivityAccordionItem({ activityData }) {
   return (
     <AccordionItem my="10px">
@@ -20,9 +22,15 @@ function ActivityAccordionItem({ activityData }) {
           </Text>
 
           <Text mb="10px">
-            Data de entrega:
+            Data de entrega da atividade:
             {' '}
             {activityData.dueDate}
+          </Text>
+
+          <Text mb="10px">
+            Data em que foi entregue
+            {' '}
+            {activityData.completedDate}
           </Text>
 
           {activityData.assignedLessons.length > 0 && (
@@ -31,21 +39,33 @@ function ActivityAccordionItem({ activityData }) {
               {' '}
               <UnorderedList my="10px">
                 {activityData.assignedLessons.map((lesson) => (
-                  <Link
-                    to={lesson.lessonType === 'theoric' ? `/theoricLesson/${lesson.id}` : '/'}
-                  >
+
+                  <Flex alignItems="center">
                     <ListItem p="3px">{lesson.lessonName}</ListItem>
-                  </Link>
+                    <Link
+                      to={lesson.lessonType === 'theoric' ? `/theoricLesson/${lesson.id}` : '/'}
+                    >
+                      <FiExternalLink />
+                    </Link>
+                  </Flex>
                 ))}
               </UnorderedList>
             </Text>
           )}
 
-          <Text>
-            Status:
-            {' '}
-            {activityData.completed ? 'Concluído' : 'Não concluído'}
-          </Text>
+          <Text>Status:</Text>
+          {activityData.completed ? (
+            <Text color="pure_green.100">
+              {' '}
+              Concluído
+            </Text>
+          ) : (
+            <Text color="main_red.100">
+              {' '}
+              Não concluído
+            </Text>
+          )}
+
           <Flex />
         </Flex>
       </AccordionPanel>

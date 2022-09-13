@@ -5,7 +5,9 @@ import {
 import ActivityAccordionItem from './Accordion/ActivityAccordionItem';
 import PlayerTable from './PlayerTable/PlayerTable';
 
-function DisplayPlayerOrActivityModal({ modalType, isOpen, onClose }) {
+function DisplayPlayerOrActivityModal({
+  modalTitle, modalType, isOpen, onClose,
+}) {
   function checkIfActivityIsCompleted(lessons) {
     return lessons.every((l) => l.completed);
   }
@@ -56,16 +58,19 @@ function DisplayPlayerOrActivityModal({ modalType, isOpen, onClose }) {
       name: 'Paulo Sérgio',
       nickname: 'TogakureRyu',
       totalPoints: 2139,
+      ranking: 'Buraco Negro',
     },
     {
       name: 'Joanna',
       nickname: 'Joene',
       totalPoints: 123,
+      ranking: 'Buraco Negro',
     },
     {
       name: 'maria',
       nickname: 'Shiroe',
       totalPoints: 2139,
+      ranking: 'Buraco Negro',
     },
   ];
 
@@ -88,8 +93,7 @@ function DisplayPlayerOrActivityModal({ modalType, isOpen, onClose }) {
               fontWeight="light"
               mt="40px"
             >
-              Atividades
-
+              {modalTitle && ''}
             </Heading>
           </ModalHeader>
 

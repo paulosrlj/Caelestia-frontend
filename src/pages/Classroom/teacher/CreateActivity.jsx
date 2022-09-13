@@ -9,6 +9,7 @@ import DateFormik from '../../../components/Form/DateFormik';
 import SelectFormik from '../../../components/Form/SelectFormik';
 import TextAreaFormik from '../../../components/Form/TextAreaFormik';
 import TextFieldFormik from '../../../components/Form/TextFieldFormik';
+import uploadImageCallBack from '../../../util/uploadImageCallback';
 
 import { PdfIcon, ImageIcon } from '../assets';
 
@@ -41,11 +42,12 @@ function CreateActivity() {
   ];
 
   const [addedLessons, setAddedLessons] = useState([]);
+  const [moduleId, setModuleId] = useState([]);
 
   const [lessons, setLessons] = useState([
     { id: '12718e', name: 'Lição I' },
     { id: '12raf', name: 'Lição II' },
-    { id: 'asg2113', name: 'Lição II' },
+    { id: 'asg2113', name: 'Lição III' },
   ]);
 
   const handleFilesChange = (e) => {
@@ -55,12 +57,24 @@ function CreateActivity() {
   };
 
   const onSelectChange = (e) => {
-    setAddedLessons((oldState) => ([...oldState, e.target.value]));
+    console.log(e.target.value);
+    setAddedLessons((oldState) => {
+      if (!addedLessons.includes(e.target.value)) {
+        return ([...oldState, e.target.value]);
+      }
+
+      return oldState;
+    });
+  };
+
+  const onModuleChange = (e) => {
+    console.log(e.target.value);
+    setModuleId(e.target.value);
   };
 
   const validateActivityCreation = (values) => {
     const errors = {};
-
+    console.log(errors);
     if (!values.activityName) {
       errors.activityName = 'O nome da turma não pode ser vazio';
     }
@@ -71,7 +85,22 @@ function CreateActivity() {
       errors.dueDate = 'A lição precisa de uma data!';
     }
 
+    // if (!values.moduleId) {
+    //   errors.moduleId = 'Selecione um módulo!';
+    // }
+
+    // if (values.lessons.length === 0) {
+    //   errors.lessons = 'Selecione ao menos uma lição!';
+    // }
+
     return errors;
+  };
+
+  const handleCreateActivity = () => {
+    files.forEach(async (f) => {
+      const url = await uploadImageCallBack(f, 'classroomFiles');
+      console.log(url);
+    });
   };
 
   const notifySuccess = (message) => toast.success(message);
@@ -84,8 +113,8 @@ function CreateActivity() {
         dueDate: '',
         classroomId: '',
         teacherId: '',
-        lessons: [],
         moduleId: '',
+        lessons: [],
       }}
       validate={validateActivityCreation}
       onSubmit={(values, { setSubmitting }) => {
@@ -178,6 +207,8 @@ function CreateActivity() {
                 form={form}
                 placeholder="Módulo"
                 formLabel="Módulo da lição"
+                onSelectChange={onModuleChange}
+                value={moduleId}
               />
             )}
           </Field>
@@ -190,7 +221,6 @@ function CreateActivity() {
                   name="lessons"
                   field={field}
                   form={form}
-                  placeholder="Lição"
                   formLabel="Lição do módulo"
                   onSelectChange={onSelectChange}
                 />
@@ -200,14 +230,13 @@ function CreateActivity() {
                   border="1px dashed black"
                   p="10px"
                   overflowY="scroll"
-                  // flexWrap="wrap"
                   flexDir="column"
                 >
-                  {addedLessons.length > 0 && addedLessons.map((l) => (
-                    <UnorderedList>
+                  <UnorderedList>
+                    {addedLessons.length > 0 && addedLessons.map((l) => (
                       <ListItem>{l}</ListItem>
-                    </UnorderedList>
-                  ))}
+                    ))}
+                  </UnorderedList>
                 </Flex>
               </>
             )}
@@ -222,6 +251,7 @@ function CreateActivity() {
             w="100%"
             disabled={isSubmitting}
             isLoading={isSubmitting}
+            onClick={handleCreateActivity}
           >
             Criar
           </Button>
